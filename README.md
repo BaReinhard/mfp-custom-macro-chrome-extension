@@ -1,3 +1,14 @@
+# Installation
+1. Visit https://github.com/BaReinhard/mfp-custom-macro-chrome-extension/archive/master.zip
+2. Unzip the package
+3. Open chrome and navigate to chrome://extensions/
+4. Enable develop mode (its a little toggle at the top right)
+5. Click `Load unpacked`, navigate to the folder you unzipped the zip file, and double click it.
+6. Now click select to use that folder.
+7. You should now see the chrome extension at the top of your browser.
+
+
+# How to use
 In order to successfully change your macros :
 1. first you must load this chrome extension into your browser
 2. Login to your myfitnesspal website
