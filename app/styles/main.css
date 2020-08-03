@@ -1,3 +1,14 @@
 body {
   padding: 20px;
 }
+
+@import url(//db.onlinewebfonts.com/c/369d2dae62f2005d3fe780e7ad61a510?family=GentonaW00-BoldItalic);
+
+html {
+  height: 600px;
+  width: 400px;
+}
+
+h1 {
+  font-family: Gentona, Gentoa, sans-serif;
+}

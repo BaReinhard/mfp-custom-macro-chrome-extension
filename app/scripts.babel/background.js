@@ -4,7 +4,7 @@ chrome.runtime.onInstalled.addListener(details => {
   console.log('previousVersion', details.previousVersion);
 });
 
-chrome.browserAction.setBadgeText({text: '\'MFP'});
+chrome.browserAction.setBadgeText({text: 'MFP'});
 
 var onBeforeRequestListener = function(details) {
   if(details.requestBody) {
@@ -44,10 +44,3 @@ chrome.webRequest.onBeforeRequest.addListener(onBeforeRequestListener, {
 chrome.webRequest.onBeforeSendHeaders.addListener(onBeforeRequestListener, {
   urls: ["https://api.myfitnesspal.com/*"]
 }, ["requestHeaders", "blocking"]);
-
-/*
-2060
-115
-71
-240
-*/

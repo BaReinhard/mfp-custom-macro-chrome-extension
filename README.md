@@ -3,7 +3,7 @@
 2. Unzip the package
 3. Open chrome and navigate to chrome://extensions/
 4. Enable develop mode (its a little toggle at the top right)
-5. Click `Load unpacked`, navigate to the folder you unzipped the zip file, and double click it.
+5. Click `Load unpacked`, navigate to the folder you unzipped the zip file, and double click it, then double click the folder named `app`.
 6. Now click select to use that folder.
 7. You should now see the chrome extension at the top of your browser.
 

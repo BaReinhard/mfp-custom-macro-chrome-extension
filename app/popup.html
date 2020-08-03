@@ -8,21 +8,40 @@
     <!-- endbuild -->
     <!-- build:css styles/main.css -->
     <link href="styles/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link href="//db.onlinewebfonts.com/c/369d2dae62f2005d3fe780e7ad61a510?family=GentonaW00-BoldItalic" rel="stylesheet" type="text/css"/>
     <!-- endbuild -->
   </head>
   <body>
-    <h1>MyFitnessPal Custom Macros</h1>
+    <h1>MFP Custom Macros</h1>
     <form>
-      <label for="calories">Calories:</label>
-      <input type="text" id="calories" name="calories"><br><br>
-      <label for="protein">Protein:</label>
-      <input type="text" id="protein" name="protein"><br><br>
-      <label for="fat">Fat:</label>
-      <input type="text" id="fat" name="fat"><br><br>
-      <label for="carbs">Carbs:</label>
-      <input type="text" id="carbs" name="carbs"><br><br>
+      <div class="form-group">
+        <label for="calories">Calories:</label>
+        <input type="text" class="form-control" id="calories" name="calories">
+        <small id="caloriesHelp" class="form-text text-muted">Your calories goes here.</small><br/>
+      </div>
+      <div class="form-group">
+        <label for="protein">Protein:</label>
+        <input type="text" class="form-control" id="protein" name="protein">
+        <small id="proteinHelp" class="form-text text-muted">Your protein goes here.</small><br/>
+      </div>
+      <div class="form-group">
+        <label for="carbs">Carbs:</label>
+        <input type="text" class="form-control" id="carbs" name="carbs">
+        <small id="carbHelp" class="form-text text-muted">Your carbs goes here.</small><br/>
+      </div>
+      <div class="form-group">
+        <label for="fat">Fat:</label>
+        <input type="text" class="form-control" id="fat" name="fat">
+        <small id="fatHelp" class="form-text text-muted">Your fat goes here.</small><br/>
+      </div>
+      <div class="form-group">
+        <label for="alcohol">Alcohol:</label>
+        <input type="text" class="form-control" id="alcohol" name="alcohol">
+        <small id="alcoholHelp" class="form-text text-muted">This doesn't do anything and you shouldn't be drinking this.</small>
+      </div>
     </form>
-    <button id="submit">Submit</button>
+    <button id="submit" class="btn btn-primary">Submit</button>
 
     <!-- build:js scripts/popup-vendor.js -->
     <!-- bower:js -->
@@ -33,4 +52,5 @@
     <script src="scripts/popup.js"></script>
     <!-- endbuild -->
   </body>
+  
 </html>

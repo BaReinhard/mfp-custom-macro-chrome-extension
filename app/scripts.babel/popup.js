@@ -1,8 +1,4 @@
 'use strict';
-// let axios = require("axios");
-
-console.log('Time to save some money, eh');
-
 
 function syncData() {
     chrome.storage.local.get(['authorization',"mfp-user-id", "protein","fat","carbs", 'calories', 'macro_data'], function(headers) {
