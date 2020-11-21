@@ -1,6 +1,7 @@
 'use strict';
 
 function syncData() {
+    try{
     chrome.storage.local.get(['authorization',"mfp-user-id", "protein","fat","carbs", 'calories', 'macro_data'], function(headers) {
                 console.log(headers);
                 let data = parseData(JSON.parse(headers.macro_data), headers.protein, headers.fat, headers.carbs, headers.calories)
@@ -20,6 +21,10 @@ function syncData() {
         
         
     });
+    } catch(err){
+        console.log(err)
+        throw (err);
+    }
 }
 
 function parseData(data, protein, fat, carbs, calories) {
@@ -39,15 +44,29 @@ function parseData(data, protein, fat, carbs, calories) {
 
 document.addEventListener('DOMContentLoaded', function() {
     var submit = document.getElementById('submit');
+    var form = document.getElementById("form");
+    var completed = document.getElementById("completed");
+    var errored = document.getElementById("error");
     submit.addEventListener('click', function() {
         console.log("clicked")
+        // Hide form
+        form.style.display = 'none';
+        
         let protein = document.getElementById("protein").value;
         let fat = document.getElementById("fat").value;
         let calories = document.getElementById('calories').value;
         let carbs = document.getElementById('carbs').value
         chrome.storage.local.set({protein,fat,calories,carbs}, function() {
             console.log("completed")
-            syncData();
+            try{
+                syncData();
+                // Display completed div
+                completed.style.display = 'block';
+            }catch(err) {
+                // Display error div
+                errored.style.display = 'block';
+                form.style.display = 'block';
+            }
           });
     })
 });

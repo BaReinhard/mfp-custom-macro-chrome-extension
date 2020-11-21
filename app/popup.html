@@ -14,7 +14,7 @@
   </head>
   <body>
     <h1>MFP Custom Macros</h1>
-    <form>
+    <form id="form">
       <div class="form-group">
         <label for="calories">Calories:</label>
         <input type="text" class="form-control" id="calories" name="calories">
@@ -41,6 +41,8 @@
         <small id="alcoholHelp" class="form-text text-muted">This doesn't do anything and you shouldn't be drinking this.</small>
       </div>
     </form>
+    <div id="completed" style="display:none">Data has been submitted successfully</div>
+    <div id="errored" style="display:none">Data submission has failed, please try again.</div>
     <button id="submit" class="btn btn-primary">Submit</button>
 
     <!-- build:js scripts/popup-vendor.js -->
