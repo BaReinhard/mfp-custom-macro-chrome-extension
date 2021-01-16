@@ -16,6 +16,7 @@ function syncData() {
                         console.log(this)
                     }
                 };
+
                 xhttp.send(JSON.stringify(data));
             
         
@@ -25,6 +26,10 @@ function syncData() {
         console.log(err)
         throw (err);
     }
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function parseData(data, protein, fat, carbs, calories) {
@@ -56,13 +61,16 @@ document.addEventListener('DOMContentLoaded', function() {
         let fat = document.getElementById("fat").value;
         let calories = document.getElementById('calories').value;
         let carbs = document.getElementById('carbs').value
-        chrome.storage.local.set({protein,fat,calories,carbs}, function() {
+        chrome.storage.local.set({protein,fat,calories,carbs}, async function() {
             console.log("completed")
             try{
                 syncData();
-                // Display completed div
-                completed.style.display = 'block';
+
+                errored.style.display = 'block';
+                form.style.display = 'block';
+            
             }catch(err) {
+                
                 // Display error div
                 errored.style.display = 'block';
                 form.style.display = 'block';
